@@ -29,27 +29,34 @@ class MainActivity : AppCompatActivity() {
             insets
 
         }
-        // Find views
+
         mainLayout = findViewById(R.id.main)
         superButtton1 = findViewById(R.id.superButtton1)
         superButtton2 = findViewById(R.id.superButtton2)
         superButtton3 = findViewById(R.id.superButtton3)
         textView2 = findViewById(R.id.textView2)
 
-        // Button 1 - Change background color to black
+
         superButtton1.setOnClickListener {
             mainLayout.setBackgroundColor(Color.BLACK)
         }
 
-        // Button 2 - Change text of textView2
+
         superButtton2.setOnClickListener {
             textView2.text = "here's the magic!"
         }
 
-        // Button 3 - Navigate to SecondActivity
+
         superButtton3.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
             startActivity(intent)
         }
+//        Button myButton = findViewById(R.id.myButton);
+//        myButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+//                startActivity(intent);
+//            }
     }
 }

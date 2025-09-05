@@ -8,7 +8,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Title Text -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -21,7 +20,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="80dp"/>
 
-    <!-- Subtext -->
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
