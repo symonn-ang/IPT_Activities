@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "683152626626",
+    "project_id": "assignment-android-auth",
+    "storage_bucket": "assignment-android-auth.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:683152626626:android:8e9e71557335eea2603c5b",
+        "android_client_info": {
+          "package_name": "com.example.a3_firestoreauth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzRTPFM8p_TppeXvxhTnyO1LJ05SnDo1o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
