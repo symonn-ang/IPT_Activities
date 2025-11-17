@@ -1,12 +1,24 @@
 package com.example.a3_firestoreauth
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 class Home : AppCompatActivity() {
+
+    private lateinit var logoutButton: Button // lateinit when you dont want to null stuf and delay the assignment
+    private lateinit var auth: FirebaseAuth
+    private lateinit var textView: TextView
+    private var user: FirebaseUser? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -16,5 +28,34 @@ class Home : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        auth = FirebaseAuth.getInstance();
+
+        textView = findViewById(R.id.user)
+        logoutButton = findViewById(R.id.logoutBtn)
+//        auth.currentUser?.let {
+//            user = it
+//        } ?: run {
+//            // Handle not logged in state
+//            Log.e("Auth", "No user logged in")
+//        }
+//          check later
+        user = auth.currentUser
+        if (user == null) {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        else {
+            textView.text = user?.email
+        }
+
+        logoutButton.setOnClickListener {
+            FirebaseAuth.getInstance().signOut();
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
     }
 }

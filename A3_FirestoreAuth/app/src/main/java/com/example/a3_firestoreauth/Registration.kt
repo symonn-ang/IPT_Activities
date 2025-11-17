@@ -29,7 +29,7 @@ class Registration : AppCompatActivity() {
         // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = auth.currentUser
         if (currentUser != null) {
-            val intent = Intent(this, Home::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish() // optional, back or none ;3
         }
@@ -65,11 +65,13 @@ class Registration : AppCompatActivity() {
 
             if (email.isEmpty()) {
                 Toast.makeText(this, "Enter Email", Toast.LENGTH_SHORT).show()
+                progBar.setVisibility(View.GONE);
                 return@setOnClickListener
             }
 
             if (password.isEmpty()) {
                 Toast.makeText(this, "Enter Password", Toast.LENGTH_SHORT).show()
+                progBar.setVisibility(View.GONE);
                 return@setOnClickListener
             }
 
@@ -80,6 +82,9 @@ class Registration : AppCompatActivity() {
                         // Sign in success
                         Log.d("Registration", "createUserWithEmail:success")
                         val user: FirebaseUser? = auth.currentUser
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                        finish() // optional, back or none ;3
 //                        updateUI(user)
                     } else {
                         // Sign in fails

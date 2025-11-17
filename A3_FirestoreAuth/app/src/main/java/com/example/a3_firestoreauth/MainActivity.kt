@@ -63,11 +63,13 @@ class MainActivity : AppCompatActivity() {
 
             if (email.isEmpty()) {
                 Toast.makeText(this, "Enter Email", Toast.LENGTH_SHORT).show()
+                progBar.setVisibility(View.GONE);
                 return@setOnClickListener
             }
 
             if (password.isEmpty()) {
                 Toast.makeText(this, "Enter Password", Toast.LENGTH_SHORT).show()
+                progBar.setVisibility(View.GONE);
                 return@setOnClickListener
             }
 

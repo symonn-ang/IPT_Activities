@@ -40,7 +40,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/username"
             android:layout_width="match_parent"
-            android:layout_height="44dp"
+            android:layout_height="wrap_content"
             android:inputType="text"
             android:textColor="@color/material_dynamic_neutral50"
             android:textSize="20sp"/>
@@ -61,7 +61,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
             android:layout_width="match_parent"
-            android:layout_height="44dp"
+            android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:textColor="@color/material_dynamic_neutral50"
             android:textSize="20sp"/>
@@ -74,13 +74,15 @@
         android:id="@+id/progressBar"
         android:visibility="gone"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <Button
         android:id="@+id/registerBtn"
         android:layout_width="244dp"
         android:layout_height="60dp"
         android:layout_marginTop="24dp"
-        android:text="Register"
+        android:text="@string/register"
         android:textColor="@android:color/white"
         android:textSize="20sp"
         app:backgroundTint="@android:color/holo_blue_dark"
